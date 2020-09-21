@@ -1,0 +1,3 @@
+
+(gedit:31656): Gtk-WARNING **: 23:01:56.444: Calling org.xfce.Session.Manager.Inhibit failed: GDBus.Error:org.freedesktop.DBus.Error.UnknownMethod: Method "Inhibit" with signature "susu" on interface "org.xfce.Session.Manager" doesn't exist
+
