@@ -214,16 +214,8 @@ get_face_result中可以访问self里面的哪些资源？在1处（thread声明
 
 结论不变，start后，父线程子线程先后顺序影响了变量赋值  
 
-## Condition和Event
-参考：  
-Python多线程—线程同步（**Lock/RLock、Condition、queue、Event**）：https://blog.csdn.net/Lesour/article/details/88808139   
-
 ## 参考
 [python ThreadLocal](https://blog.csdn.net/u010660276/article/details/50574180)  
 [深入理解Python中的ThreadLocal变量（上）](https://www.jianshu.com/p/74640d22a72f)  
 [Python中ThreadLocal的理解与使用](https://www.cnblogs.com/linpd/p/10051945.html)    
 [在阻塞式io中，如果一个线程在等待io操作，那么cpu还会分配时间片给该线程吗？](https://www.jianshu.com/p/c655e0a944ae)  
-Python多线程—线程同步（**Lock/RLock、Condition、queue、Event**）：https://blog.csdn.net/Lesour/article/details/88808139  
-python笔记11-多线程之Condition（条件变量）(**notify,wait锁传递，细节控制**):https://www.cnblogs.com/yoyoketang/p/8337118.html  
-python3是如何使用线程的（Event与Condition）(**在python cookbook中建议event作为一次性事件使用,Condition可以进行多次通知，并通知不同数量的线程**):https://blog.csdn.net/qq_34392457/article/details/108319357  
-

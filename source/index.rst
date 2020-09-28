@@ -23,21 +23,14 @@ Welcome to python_study's documentation!
    python进阶11并发之七多种并发方式的效率测试
    python进阶12并发之八多线程与数据同步
    python进阶13并发之九多进程和数据共享
-   python进阶14文件路径(找不到文件)
-   python进阶15变量作用域LEGB
-   python进阶16多继承与Mixin
-   python进阶17炫技巧
-   python进阶18正则表达式
-   python进阶19垃圾回收GC
-   python进阶20装饰器
-   python进阶21之actor
-   python进阶22再识单例模式
-   python进阶23pytest测试和覆盖率
-   python进阶24调试pdb
-   python进阶25多线程性能分析(装饰器和chromeTrace)
-   python进阶26代码洁癖
-   python进阶27远程接口调试
-
+   python进阶14变量作用域LEGB
+   python进阶15多继承与Mixin
+   python进阶16炫技巧
+   python进阶17正则表达式
+   python进阶18垃圾回收GC
+   python进阶19装饰器
+   python进阶20之actor
+   python进阶21再识单例模式
 
 
 Indices and tables
