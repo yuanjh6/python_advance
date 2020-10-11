@@ -1,20 +1,24 @@
 # python进阶03UnboundLocalError和NameError错误
 ## 几个概念
+
+code block：作为一个单元(Unit)被执行的一段python程序文本。例如一个模块、函数体和类的定义等。  
+scope：在一个code block中定义name的可见性；  
+block’s environment：对于一个code block，其所有scope中可见的name的集合构成block的环境。  
+bind name：下面的操作均可视为绑定操作  
 ```
-code block：作为一个单元(Unit)被执行的一段python程序文本。例如一个模块、函数体和类的定义等。
-scope：在一个code block中定义name的可见性；
-block’s environment：对于一个code block，其所有scope中可见的name的集合构成block的环境。
-bind name：下面的操作均可视为绑定操作
 函数的形参
 import声明
 类和函数的定义
 赋值操作
 for循环首标
 异常捕获中相关的赋值变量
-local variable：如果name在一个block中被绑定，该变量便是该block的一个local variable。
-global variable：如果name在一个module中被绑定，该变量便称为一个global variable。
-free variable: 如果一个name在一个block中被引用，但没有在该代码块中被定义，那么便称为该变量为一个free variable。
 ```
+local variable：如果name在一个block中被绑定，该变量便是该block的一个local variable。  
+global variable：如果name在一个module中被绑定，该变量便称为一个global variable。  
+free variable: 如果一个name在一个block中被引用，但没有在该代码块中被定义，那么便称为该变量为一个free variable。  
+
+关于变量作用域参考博文：python进阶14变量作用域LEGB  
+
 ## 经典案例1
 ```
 def outer_func():
