@@ -1,8 +1,12 @@
 # python进阶20之actor
-actor模型。actor模式是一种最古老的也是最简单的并行和分布式计算解决方案。  
-优点：充分利用单线程＋事件机制，达到了多线程效果。   
-缺点，对python而言，由于GIL的存在，毕竟只是单线程，难以匹敌多进程，目前使用并不多。  
-## 简单任务调度器  
+actor模型。actor模式是一种最古老的也是最简单的并行和分布式计算解决方案。
+
+优点：充分利用单线程＋事件机制，达到了多线程效果。
+
+缺点，对python而言，由于GIL的存在，毕竟只是单线程，难以匹敌多进程，目前使用并不多。
+
+## 简单任务调度器
+
 ```
 class TaskScheduler:
     def __init__(self):
@@ -37,7 +41,8 @@ sched.run()
 ```
 
 ## 协程生产者消费者
-廖雪峰的python官网教程里面的协程生产者消费者  
+廖雪峰的python官网教程里面的协程生产者消费者
+
 ```
 def consumer():
     r = ''
@@ -63,7 +68,8 @@ produce(c)
 ```
 
 ## 并发网络应用程序
-演示了使用生成器来实现一个并发网络应用程序：  
+演示了使用生成器来实现一个并发网络应用程序：
+
 ```
 class ActorScheduler:
     def __init__(self):
@@ -123,6 +129,9 @@ if __name__ == '__main__':
 
 
 ## 参考
-扩展Python Gevent的Actor模型：https://www.dazhuanlan.com/2020/02/29/5e5a7f241ed15/  
-终结python协程----从yield到actor模型的实现：https://www.bbsmax.com/A/n2d9bQaYzD/  
-12.12 使用生成器代替线程：https://python3-cookbook.readthedocs.io/zh_CN/latest/c12/p12_using_generators_as_alternative_to_threads.html  
+扩展Python Gevent的Actor模型：https://www.dazhuanlan.com/2020/02/29/5e5a7f241ed15/
+
+终结python协程----从yield到actor模型的实现：https://www.bbsmax.com/A/n2d9bQaYzD/
+
+12.12 使用生成器代替线程：https://python3-cookbook.readthedocs.io/zh_CN/latest/c12/p12_using_generators_as_alternative_to_threads.html
+

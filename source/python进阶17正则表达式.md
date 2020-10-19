@@ -21,11 +21,14 @@
 `[^012]`:表示除012外的任意字符，包括3-9,a-z,A-Z,等等
 注意：[]里面的.和*等一些特殊字符都失去特殊意义，只表示本身。
 ```
-![](_v_images/20200604234002143_42267894.png)  
+![](_v_images/20200604234002143_42267894.png)
 
-![](_v_images/20200604233948999_235626947.png)  
 
-![](_v_images/20200604234014638_1136493652.png)  
+![](_v_images/20200604233948999_235626947.png)
+
+
+![](_v_images/20200604234014638_1136493652.png)
+
 
 ## 分组捕获
 ```
@@ -43,7 +46,8 @@ re_match.group(2)
 ```
 
 ## 懒惰限定符
-如果有多个贪婪，则第一个最贪婪  
+如果有多个贪婪，则第一个最贪婪
+
 ```
 *? ：重复任意次，但尽可能少重复
 +? ：重复1次或更多次，但尽可能少重复
@@ -78,7 +82,11 @@ for match in match_list:
 
 
 ## 参考
-Python正则表达式急速入门：https://baijiahao.baidu.com/s?id=1652504385879645545&wfr=spider&for=pc  
-正则表达式必知必会：python.iswbm.com/en/latest/c01/c01_11.html  
-Python 正则表达式：https://www.runoob.com/python/python-reg-expressions.html  
-Python正则表达式指南：https://www.cnblogs.com/huxi/archive/2010/07/04/1771073.html  
+Python正则表达式急速入门：https://baijiahao.baidu.com/s?id=1652504385879645545&wfr=spider&for=pc
+
+正则表达式必知必会：python.iswbm.com/en/latest/c01/c01_11.html
+
+Python 正则表达式：https://www.runoob.com/python/python-reg-expressions.html
+
+Python正则表达式指南：https://www.cnblogs.com/huxi/archive/2010/07/04/1771073.html
+

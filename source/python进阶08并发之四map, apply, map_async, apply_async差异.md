@@ -1,7 +1,9 @@
 # python进阶08并发之四map, apply, map_async, apply_async差异
 ## 差异矩阵
-python封装了4种常用方法，用于实现并发  
-其差异如下  
+python封装了4种常用方法，用于实现并发
+
+其差异如下
+
 
 |             | Multi-args | Concurrence | Blocking | Ordered-results |
 | ----------- | ---------- | ----------- | -------- | -------------- |
@@ -10,7 +12,8 @@ python封装了4种常用方法，用于实现并发
 | map_async   | no         | yes         | no       | yes             |
 | apply_async | yes        | yes         | no       | no              |
 
-需要注意：map 和 map_async 入参为迭代器类型，可以批量调用。而apply和apply_async只能一个个调用。  
+需要注意：map 和 map_async 入参为迭代器类型，可以批量调用。而apply和apply_async只能一个个调用。
+
 ```
 # map
 results = pool.map(worker, [1, 2, 3])
@@ -30,9 +33,12 @@ for x, y in [[1, 1], [2, 2]]:
     pool.apply_async(worker, (x, y), callback=collect_result)
 ```
 ## apply和apply_async
-Pool.apply_async：调用立即返回而不是等待结果。AsyncResult返回一个对象。你调用其get()方法以检索函数调用的结果。该get()方法将阻塞直到功能完成。  
-因此，pool.apply(func, args, kwargs)等效于pool.apply_async(func, args, kwargs).get()。  
-相比Pool.apply，该Pool.apply_async方法还具有一个回调，则在函数完成时调用该回调。可以使用它来代替get()。  
+Pool.apply_async：调用立即返回而不是等待结果。AsyncResult返回一个对象。你调用其get()方法以检索函数调用的结果。该get()方法将阻塞直到功能完成。
+
+因此，pool.apply(func, args, kwargs)等效于pool.apply_async(func, args, kwargs).get()。
+
+相比Pool.apply，该Pool.apply_async方法还具有一个回调，则在函数完成时调用该回调。可以使用它来代替get()。
+
 
 ```
 import multiprocessing as mp
@@ -62,9 +68,14 @@ if __name__ == '__main__':
 
 [1, 0, 4, 9, 25, 16, 49, 36, 81, 64]
 ```
-还要注意，可使用调用许多不同的函数Pool.apply_async（并非所有调用都需要使用同一函数）。  
-相反，Pool.map将相同的函数应用于许多参数。但是，与不同Pool.apply_async，返回结果的顺序与参数的顺序相对应。  
+还要注意，可使用调用许多不同的函数Pool.apply_async（并非所有调用都需要使用同一函数）。
 
-## 参考  
-[Python multiprocessing.Pool: Difference between map, apply, map_async, apply_async](http://blog.shenwei.me/python-multiprocessing-pool-difference-between-map-apply-map_async-apply_async/)  
-[Python-multiprocessing.Pool：何时使用apply，apply_async或map？](http://codingdict.com/questions/1325)  
+相反，Pool.map将相同的函数应用于许多参数。但是，与不同Pool.apply_async，返回结果的顺序与参数的顺序相对应。
+
+
+## 参考
+
+[Python multiprocessing.Pool: Difference between map, apply, map_async, apply_async](http://blog.shenwei.me/python-multiprocessing-pool-difference-between-map-apply-map_async-apply_async/)
+
+[Python-multiprocessing.Pool：何时使用apply，apply_async或map？](http://codingdict.com/questions/1325)
+

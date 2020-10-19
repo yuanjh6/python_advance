@@ -1,8 +1,11 @@
 # python进阶11并发之七多种并发方式的效率测试
-测试map,apply_async,gevent协程爬虫  
-测试代码:网页爬虫  
+测试map,apply_async,gevent协程爬虫
 
-## 函数代码  
+测试代码:网页爬虫
+
+
+## 函数代码
+
 ```
 def thread_multi():
     threads = list()
@@ -56,11 +59,14 @@ def process_async():
     print([result.get() for result in results])
 ```
 
-## 测试结果concurrentOpt  
-![](_v_images/20200530165323184_493061281.png)  
+## 测试结果concurrentOpt
+
+![](_v_images/20200530165323184_493061281.png)
 
 
-![](_v_images/20200530165334423_70013299.png)  
+
+![](_v_images/20200530165334423_70013299.png)
+
 
 
 |      | thread_multi | thread_map | thread_async | process_multi | process_map | process_async |
@@ -76,12 +82,16 @@ def process_async():
 | 8    | 9.003843     | 6.43141    | 9.941858     | 4.738146      | 8.170778    | 9.773284      |
 | 9    | 9.414749     | 15.56822   | 9.23152      | 8.254023      | 8.781076    | 14.082026     |
 | 10   | 8.0576371    | 10.4831831 | 9.8210853    | 8.0897814     | 11.2688131 | 11.1745724    |
-最后一行为均值  
+最后一行为均值
 
-## 测试结果concurrentOptGevent  
-![](_v_images/20200530170150361_1240656248.png)  
 
-![](_v_images/20200530170201434_1766846624.png)  
+## 测试结果concurrentOptGevent
+
+![](_v_images/20200530170150361_1240656248.png)
+
+
+![](_v_images/20200530170201434_1766846624.png)
+
 
 
 |      | thread_multi | thread_map | thread_async | process_multi | process_map | process_async | gevent_test |
@@ -97,7 +107,8 @@ def process_async():
 | 8    | 8.838316     | 10.292949  | 6.709802     | 9.328648      | 1.80E-05    | 5.00E-06      | 5.724812    |
 | 9    | 7.144312     | 9.321319   | 9.64821      | 5.898414      | 3.30E-05    | 1.00E-05      | 8.251311    |
 | 10   | 6.7499353    | 9.0923011  | 8.9605548    | 7.1163604     | 2.85E-05    | 8.80E-06      | 5.956831    |
-最后一行为均值  
+最后一行为均值
+
 
 
 ## 总结
@@ -122,12 +133,20 @@ def process_async():
 | process_async       | 进程池     | 异步              | 非阻塞              | 卡住      |
 | gevent_test         | 协程      | 异步              | 非阻塞              | 5.956831 |
 
-结论:  
-01，启用gevent后，除了卡住的，线程和进程均加快1s左右时间  
-02，协程在线程程序中是最快的  
-03，多线程程序下载速度弱优于多进程  
-04，不论是进程还是线程，使用thread_async都快于map  
-05，不考虑协程时，多线程较线程池速度更快，多进程较进程池速度更快，这一点不大符合理论，个人感觉和url数量少有关.  
+结论:
 
-至于进程池在启用gevent后卡住的问题，网上也没查到相关的靠谱资料，哪位大牛晓得的话，求解释～  
-测试代码:[github](https://github.com/yuanjh6/scripts)的concurrentOpt.py和concurrentOptGevent.py  
+01，启用gevent后，除了卡住的，线程和进程均加快1s左右时间
+
+02，协程在线程程序中是最快的
+
+03，多线程程序下载速度弱优于多进程
+
+04，不论是进程还是线程，使用thread_async都快于map
+
+05，不考虑协程时，多线程较线程池速度更快，多进程较进程池速度更快，这一点不大符合理论，个人感觉和url数量少有关.
+
+
+至于进程池在启用gevent后卡住的问题，网上也没查到相关的靠谱资料，哪位大牛晓得的话，求解释～
+
+测试代码:[github](https://github.com/yuanjh6/scripts)的concurrentOpt.py和concurrentOptGevent.py
+
